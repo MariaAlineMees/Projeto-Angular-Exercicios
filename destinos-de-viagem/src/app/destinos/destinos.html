@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>🌍 Destinos de Viagem ✈️ </h2>
+
+  <div class="filtros">
+    <input [(ngModel)]="filtroPais" placeholder="Filtrar por país" />
+    <input [(ngModel)]="filtroCidade" placeholder="Filtrar por cidade" />
+    <input [(ngModel)]="filtroCategoria" placeholder="Filtrar por categoria" />
+  </div>
+
+  <h3>🔎 Resultados</h3>
+  <ul class="lista">
+    <li *ngIf="destinosFiltrados.length === 0">Nenhum destino encontrado.</li>
+    <li *ngFor="let destino of destinosFiltrados">
+      <strong>{{ destino.cidade }}</strong> - {{ destino.pais }}
+      <em>({{ destino.categoria }})</em>
+      <button (click)="adicionarInteresse(destino)">Adicionar à lista</button>
+    </li>
+  </ul>
+
+  <h3>⭐ Locais com Interesse</h3>
+  <ul class="lista">
+    <li *ngIf="listaInteresse.length === 0">Nenhum destino selecionado.</li>
+    <li *ngFor="let destino of listaInteresse">
+      <strong>{{ destino.cidade }}</strong> - {{ destino.pais }}
+      <em>({{ destino.categoria }})</em>
+      <button (click)="removerInteresse(destino)">Remover</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Calculadora de IMC</h2>
+
+  <label for="peso">Peso (kg): <small>(ex: 56.6)</small></label>
+  <input
+    id="peso"
+    type="number"
+    [(ngModel)]="peso"
+    step="0.1"
+    min="0"
+    placeholder="Digite seu peso"
+  />
+
+  <label for="altura">Altura (cm): <small>(ex: 162)</small></label>
+  <input
+    id="altura"
+    type="number"
+    [(ngModel)]="altura"
+    step="1"
+    min="0"
+    placeholder="Digite sua altura"
+  />
+
+  @if (peso > 0 && altura > 0) {
+    <div class="resultado">
+      <p>Seu IMC é: {{ imc.toFixed(2) }}</p>
+      <p>Classificação: {{ classificacao }}</p>
+    </div>
+  }
+</div>

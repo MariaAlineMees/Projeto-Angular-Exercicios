@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Conversor de Moedas</h2>
+
+  <label for="valor">Valor em Reais (R$):</label>
+  <input id="valor" type="number" [(ngModel)]="valor" step="0.01" />
+
+  <label for="moeda">Moeda de destino:</label>
+  <select id="moeda" [(ngModel)]="moeda">
+    <option value="">Selecione</option>
+    <option value="bitcoin">Bitcoin</option>
+    <option value="dolar">Dólar</option>
+    <option value="euro">Euro</option>
+    <option value="ethereum">Ethereum</option>
+    <option value="libra">Libra</option>
+    <option value="iene">Iene</option>
+  </select>
+
+  <button (click)="converter()">Converter</button>
+
+  @if (resultado !== null) {
+    <div class="resultado">
+      Resultado: {{ resultado }}
+    </div>
+  }
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Cadastro de Pessoas</h2>
+
+  <form (ngSubmit)="adicionarPessoa()">
+    <label for="nome">Nome:</label>
+    <input id="nome" [(ngModel)]="nome" name="nome" required />
+
+    <label for="idade">Idade:</label>
+    <input id="idade" type="number" [(ngModel)]="idade" name="idade" required />
+
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <div class="contadores">
+    <p>👥 Maiores de 18: {{ maioresDeIdade }}</p>
+    <p>🧒 Menores de 18: {{ menoresDeIdade }}</p>
+  </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pessoa of pessoas; let i = index">
+      <td>{{ pessoa.nome }}</td>
+      <td>{{ pessoa.idade }}</td>
+      <td><button (click)="removerPessoa(i)">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
