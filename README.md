@@ -78,7 +78,7 @@ Este repositório reúne os 6 exercícios propostos no curso de Angular. Cada ex
 📁 [`destinos-de-viagem`](./destinos-de-viagem)
 
 - Tema escolhido: **Destinos de Viagem**
-- Exibe uma lista com **22 destinos**
+- Exibe uma lista com **22 Países**
 - Filtros disponíveis:
   - 🌍 País
   - 🏙️ Cidade
